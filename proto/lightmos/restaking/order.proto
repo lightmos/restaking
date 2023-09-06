@@ -19,7 +19,7 @@ message Order {
 message OrderDoneHistory {
   string fromChainId = 1;
   string toChainId = 2;
-  repeated DoneChanHistory chainHistory=3;
+  repeated DoneChanHistory chainHistory = 3;
 }
 
 message DoneChanHistory {
@@ -30,8 +30,8 @@ message DoneChanHistory {
 
 message OrderDemoList {
   string buyer = 1;
-  string seller =2;
-  repeated OrderDoneList orderDoneList =3;
+  string seller = 2;
+  repeated OrderDoneList orderDoneList = 3;
 }
 
 message OrderDoneList {
