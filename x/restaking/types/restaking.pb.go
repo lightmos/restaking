@@ -36,9 +36,11 @@ const _ = proto.GoGoProtoPackageIsVersion3 // please upgrade the proto package
 type CommissionRates struct {
 	// rate is the commission rate charged to delegators, as a fraction.
 	Rate github_com_cosmos_cosmos_sdk_types.Dec `protobuf:"bytes,1,opt,name=rate,proto3,customtype=github.com/cosmos/cosmos-sdk/types.Dec" json:"rate"`
-	// max_rate defines the maximum commission rate which validator can ever charge, as a fraction.
+	// max_rate defines the maximum commission rate which validator can ever
+	// charge, as a fraction.
 	MaxRate github_com_cosmos_cosmos_sdk_types.Dec `protobuf:"bytes,2,opt,name=max_rate,json=maxRate,proto3,customtype=github.com/cosmos/cosmos-sdk/types.Dec" json:"max_rate"`
-	// max_change_rate defines the maximum daily increase of the validator commission, as a fraction.
+	// max_change_rate defines the maximum daily increase of the validator
+	// commission, as a fraction.
 	MaxChangeRate github_com_cosmos_cosmos_sdk_types.Dec `protobuf:"bytes,3,opt,name=max_change_rate,json=maxChangeRate,proto3,customtype=github.com/cosmos/cosmos-sdk/types.Dec" json:"max_change_rate"`
 }
 
@@ -77,7 +79,8 @@ var xxx_messageInfo_CommissionRates proto.InternalMessageInfo
 
 // Commission defines commission parameters for a given validator.
 type Commission struct {
-	// commission_rates defines the initial commission rates to be used for creating a validator.
+	// commission_rates defines the initial commission rates to be used for
+	// creating a validator.
 	CommissionRates `protobuf:"bytes,1,opt,name=commission_rates,json=commissionRates,proto3,embedded=commission_rates" json:"commission_rates"`
 	// update_time is the last time the commission rate was changed.
 	UpdateTime time.Time `protobuf:"bytes,2,opt,name=update_time,json=updateTime,proto3,stdtime" json:"update_time"`

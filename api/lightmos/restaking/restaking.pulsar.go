@@ -1777,9 +1777,11 @@ type CommissionRates struct {
 
 	// rate is the commission rate charged to delegators, as a fraction.
 	Rate string `protobuf:"bytes,1,opt,name=rate,proto3" json:"rate,omitempty"`
-	// max_rate defines the maximum commission rate which validator can ever charge, as a fraction.
+	// max_rate defines the maximum commission rate which validator can ever
+	// charge, as a fraction.
 	MaxRate string `protobuf:"bytes,2,opt,name=max_rate,json=maxRate,proto3" json:"max_rate,omitempty"`
-	// max_change_rate defines the maximum daily increase of the validator commission, as a fraction.
+	// max_change_rate defines the maximum daily increase of the validator
+	// commission, as a fraction.
 	MaxChangeRate string `protobuf:"bytes,3,opt,name=max_change_rate,json=maxChangeRate,proto3" json:"max_change_rate,omitempty"`
 }
 
@@ -1830,7 +1832,8 @@ type Commission struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	// commission_rates defines the initial commission rates to be used for creating a validator.
+	// commission_rates defines the initial commission rates to be used for
+	// creating a validator.
 	CommissionRates *CommissionRates `protobuf:"bytes,1,opt,name=commission_rates,json=commissionRates,proto3" json:"commission_rates,omitempty"`
 	// update_time is the last time the commission rate was changed.
 	UpdateTime *timestamppb.Timestamp `protobuf:"bytes,2,opt,name=update_time,json=updateTime,proto3" json:"update_time,omitempty"`
