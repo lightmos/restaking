@@ -1,7 +1,7 @@
 syntax = "proto3";
 package lightmos.restaking;
 
-option go_package = "lightmos/x/restaking/types";
+option go_package = "github.com/lightmos/x/restaking/types";
 import "lightmos/restaking/order.proto";
 message BuyOrderBook {
   string index = 1; 

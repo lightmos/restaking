@@ -11,7 +11,7 @@ import "lightmos/restaking/buy_order_book.proto";
 import "lightmos/restaking/denom_trace.proto";
 import "lightmos/restaking/validator_token.proto";
 
-option go_package = "lightmos/x/restaking/types";
+option go_package = "github.com/lightmos/x/restaking/types";
 
 // Query defines the gRPC querier service.
 service Query {

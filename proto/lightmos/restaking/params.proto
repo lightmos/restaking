@@ -3,7 +3,7 @@ package lightmos.restaking;
 
 import "gogoproto/gogo.proto";
 
-option go_package = "lightmos/x/restaking/types";
+option go_package = "github.com/lightmos/x/restaking/types";
 
 // Params defines the parameters for the module.
 message Params {

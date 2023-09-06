@@ -1,5 +1,7 @@
 DOCKER := $(shell which docker)
-
+BINDIR ?= $(GOPATH)/bin
+# The below include contains the tools and runsim targets.
+include contrib/devtools/Makefile
 ###############################################################################
 ###                              Documentation                              ###
 ###############################################################################

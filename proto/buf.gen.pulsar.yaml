@@ -2,7 +2,7 @@ version: v1
 managed:
   enabled: true
   go_package_prefix:
-    default: github.com/lightmos/share/api
+    default: github.com/lightmos/restaking/api
     except:
       - buf.build/googleapis/googleapis
       - buf.build/cosmos/gogo-proto
