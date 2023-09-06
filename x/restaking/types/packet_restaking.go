@@ -1,7 +1,7 @@
 package types
 
 import (
-	types "github.com/lightmos/restaking/types"
+	sdk "github.com/cosmos/cosmos-sdk/types"
 
 	"cosmossdk.io/math"
 )
@@ -16,7 +16,7 @@ func (p RestakePacketData) ValidateBasic() error {
 
 func NewRestakePacketData(
 	restaker, delegatorAddr, validatorAddr string,
-	pubKey string, selfDelegation types.Coin, description Description,
+	pubKey string, selfDelegation sdk.Coin, description Description,
 	commission CommissionRates, minSelfDelegation math.Int,
 	destinationChainId string,
 ) (RestakePacketData, error) {

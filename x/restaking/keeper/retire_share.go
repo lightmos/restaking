@@ -45,7 +45,7 @@ func (k Keeper) OnRecvRetireSharePacket(ctx sdk.Context, packet channeltypes.Pac
 	if !found {
 		return packetAck, errors.New("not found")
 	}
-	if vt.Available.IsLT(*data.Amount) {
+	if vt.Available.IsLT(data.Amount) {
 		return packetAck, errors.New("retire token is too large")
 	} else {
 		if !vt.Retire.IsZero() {
@@ -56,11 +56,11 @@ func (k Keeper) OnRecvRetireSharePacket(ctx sdk.Context, packet channeltypes.Pac
 			vt.Retire.Amount = sdk.ZeroInt()
 		}
 
-		if vt.Available.IsEqual(*data.Amount) && vt.Total.IsZero() {
+		if vt.Available.IsEqual(data.Amount) && vt.Total.IsZero() {
 			k.RemoveValidatorToken(ctx, accAddr.String())
 		} else {
-			avaCoin := vt.Available.Sub(*data.Amount)
-			vt.Available = &avaCoin
+			avaCoin := vt.Available.Sub(data.Amount)
+			vt.Available = avaCoin
 			k.SetValidatorToken(ctx, vt)
 		}
 	}

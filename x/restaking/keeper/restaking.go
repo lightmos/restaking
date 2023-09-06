@@ -2,7 +2,6 @@ package keeper
 
 import (
 	"errors"
-	ty "github.com/lightmos/restaking/types"
 	"github.com/lightmos/restaking/x/restaking/types"
 
 	abci "github.com/cometbft/cometbft/abci/types"
@@ -230,14 +229,14 @@ func (k Keeper) OnRecvRestakePacket(ctx sdk.Context, packet channeltypes.Packet,
 		return packetAck, err
 	}
 
-	totalCoin := ty.NewCoin(k.stakingKeeper.BondDenom(ctx), data.Value.Amount)
-	retireCoin := ty.NewCoin(k.stakingKeeper.BondDenom(ctx), sdk.ZeroInt())
-	avaCoin := ty.NewCoin("token", sdk.ZeroInt())
+	totalCoin := sdk.NewCoin(k.stakingKeeper.BondDenom(ctx), data.Value.Amount)
+	retireCoin := sdk.NewCoin(k.stakingKeeper.BondDenom(ctx), sdk.ZeroInt())
+	avaCoin := sdk.NewCoin("token", sdk.ZeroInt())
 	vt := types.ValidatorToken{
 		Address:   data.Restaker,
-		Total:     &totalCoin,
-		Retire:    &retireCoin,
-		Available: &avaCoin,
+		Total:     totalCoin,
+		Retire:    retireCoin,
+		Available: avaCoin,
 	}
 	k.SetValidatorToken(ctx, vt)
 	logger.Info("carver|recv restake handle succeed", "restaker", restaker, "denom", data.Value.Denom)

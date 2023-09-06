@@ -1,8 +1,6 @@
 package types
 
 import (
-	types "github.com/lightmos/restaking/types"
-
 	"cosmossdk.io/math"
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	sdkerrors "github.com/cosmos/cosmos-sdk/types/errors"
@@ -21,7 +19,7 @@ func NewMsgCreateValidator(
 	valAddr sdk.ValAddress, pubKey string,
 	selfDelegation sdk.Coin, description Description, commission CommissionRates, minSelfDelegation math.Int,
 ) (*MsgCreateValidator, error) {
-	selfDelegationConvert := types.Coin{
+	selfDelegationConvert := sdk.Coin{
 		Denom:  selfDelegation.Denom,
 		Amount: selfDelegation.Amount,
 	}

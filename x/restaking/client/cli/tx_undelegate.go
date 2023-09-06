@@ -1,12 +1,12 @@
 package cli
 
 import (
-	lightmos "github.com/lightmos/restaking/types"
 	"strconv"
 
 	"github.com/cosmos/cosmos-sdk/client"
 	"github.com/cosmos/cosmos-sdk/client/flags"
 	"github.com/cosmos/cosmos-sdk/client/tx"
+	sdk "github.com/cosmos/cosmos-sdk/types"
 	channelutils "github.com/cosmos/ibc-go/v7/modules/core/04-channel/client/utils"
 	"github.com/lightmos/restaking/x/restaking/types"
 	"github.com/spf13/cobra"
@@ -29,7 +29,7 @@ func CmdSendUndelegate() *cobra.Command {
 			srcPort := args[0]
 			srcChannel := args[1]
 
-			argAmount, err := lightmos.ParseCoinNormalized(args[2])
+			argAmount, err := sdk.ParseCoinNormalized(args[2])
 			if err != nil {
 				return err
 			}
@@ -47,7 +47,7 @@ func CmdSendUndelegate() *cobra.Command {
 				timeoutTimestamp = consensusState.GetTimestamp() + timeoutTimestamp
 			}
 
-			msg := types.NewMsgSendUndelegate(validatorAddress, srcPort, srcChannel, timeoutTimestamp, &argAmount)
+			msg := types.NewMsgSendUndelegate(validatorAddress, srcPort, srcChannel, timeoutTimestamp, argAmount)
 			if err := msg.ValidateBasic(); err != nil {
 				return err
 			}

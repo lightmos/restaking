@@ -2,7 +2,6 @@ package types
 
 import (
 	"errors"
-	"github.com/lightmos/restaking/types"
 
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	sdkerrors "github.com/cosmos/cosmos-sdk/types/errors"
@@ -12,7 +11,7 @@ const TypeMsgWithdrawToken = "withdraw_token"
 
 var _ sdk.Msg = &MsgWithdrawToken{}
 
-func NewMsgWithdrawToken(creator string, amount types.Coin) *MsgWithdrawToken {
+func NewMsgWithdrawToken(creator string, amount sdk.Coin) *MsgWithdrawToken {
 	return &MsgWithdrawToken{
 		Creator: creator,
 		Value:   amount,

@@ -3,7 +3,6 @@ package types
 import (
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	sdkerrors "github.com/cosmos/cosmos-sdk/types/errors"
-	"github.com/lightmos/restaking/types"
 )
 
 const TypeMsgSendRetireShare = "send_retire_share"
@@ -15,7 +14,7 @@ func NewMsgSendRetireShare(
 	port string,
 	channelID string,
 	timeoutTimestamp uint64,
-	amount *types.Coin,
+	amount sdk.Coin,
 ) *MsgSendRetireShare {
 	return &MsgSendRetireShare{
 		ValidatorAddress: validatorAddress,
