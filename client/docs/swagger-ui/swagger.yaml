@@ -409,7 +409,7 @@ paths:
   /lightmos/restaking/params:
     get:
       summary: Parameters queries the parameters of the module.
-      operationId: AuthParams
+      operationId: RestakingParams
       responses:
         '200':
           description: A successful response.

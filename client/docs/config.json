@@ -10,7 +10,7 @@
       "url": "./tmp-swagger-gen/lightmos/restaking/query.swagger.json",
       "operationIds": {
         "rename": {
-          "Params": "AuthParams"
+          "Params": "RestakingParams"
         }
       }
     }
